@@ -62,7 +62,7 @@ namespace cl2j.Logging
             {
                 foreach (var kvp in filters)
                 {
-                    if (categoryName.StartsWith(kvp.Key) && logLevel < kvp.Value)
+                    if (categoryName.StartsWith(kvp.Key, StringComparison.InvariantCulture) && logLevel < kvp.Value)
                         return;
                 }
             }

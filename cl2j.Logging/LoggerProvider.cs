@@ -21,7 +21,7 @@ namespace cl2j.Logging
             if (this.options.MemoryLogs)
                 MemoryLogger = new MemoryLogger();
 
-            var fileStorage = fileStorageFactory.Get(fileStorageName);
+            var fileStorage = fileStorageFactory.GetProvider(fileStorageName);
             if (fileStorage != null)
                 BufferedFile = new BufferedFileStorage(fileStorage, this.options.MainFileNamePattern, this.options.MaxSize, this.options.FlushInterval, this.options.ClearOnStartup);
             else
