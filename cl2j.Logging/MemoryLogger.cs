@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 
 namespace cl2j.Logging
 {
@@ -20,7 +18,7 @@ namespace cl2j.Logging
             return list;
         }
 
-        internal void Log(DateTimeOffset dateTime, LogLevel logLevel, Exception ex, string text)
+        internal void Log(DateTimeOffset dateTime, LogLevel logLevel, Exception? ex, string text)
         {
             if (!EnsureCapacityDoNotOverflow())
                 return;

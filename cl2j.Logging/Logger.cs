@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace cl2j.Logging
 {
@@ -88,10 +88,7 @@ namespace cl2j.Logging
 
             provider.BufferedFile.AppendAsync(sb.ToString()).Wait();
 
-            if (provider.MemoryLogger != null)
-#pragma warning disable CS8604 // Possible null reference argument.
-                provider.MemoryLogger.Log(dateTimeProvider.Now(), logLevel, exception, text);
-#pragma warning restore CS8604 // Possible null reference argument.
+            provider.MemoryLogger?.Log(dateTimeProvider.Now(), logLevel, exception, text);
         }
     }
 }

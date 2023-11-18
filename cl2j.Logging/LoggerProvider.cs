@@ -1,8 +1,8 @@
-﻿using cl2j.FileStorage.Core;
+﻿using System.Diagnostics;
+using cl2j.FileStorage.Core;
 using cl2j.FileStorage.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.Diagnostics;
 
 namespace cl2j.Logging
 {
@@ -34,8 +34,7 @@ namespace cl2j.Logging
 
         public void ClearMemoryLogs()
         {
-            if (MemoryLogger != null)
-                MemoryLogger.Clear();
+            MemoryLogger?.Clear();
         }
 
         public ILogger CreateLogger(string categoryName)
